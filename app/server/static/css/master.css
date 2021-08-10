@@ -1,0 +1,315 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Roboto Slab', serif; */
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    background: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+.main-container{
+    padding: 0px;
+}
+.navbar{
+    display: none;
+}
+.heading{
+    background-color: whitesmoke;
+}
+.header-title{
+    font-family: 'RocknRoll One', sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    /* font-weight: bolder; */
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+}
+.menus{
+    display: block ruby;
+    float: right;
+}
+ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+.menus li a{
+    font-size: 18px;
+    text-decoration: none;
+}
+.item-link{
+    font-weight: lighter;
+    color: #666;
+}
+.activelink{
+    color: black;
+    border-bottom: 4px solid black;
+}
+.menus li a:hover{
+    color: rgb(71, 71, 71);
+    border-bottom: 4px solid rgb(71, 71, 71);
+    transition-duration: 0.1s;
+}
+main{
+    margin-top: 3rem;
+    padding-top: 50px;
+}
+.feature-board{
+    background: url('../images/design1.png') right center no-repeat;
+    margin-bottom: 100px;
+}
+.section-title {
+    padding-bottom: 40px;
+}
+.section-title h2 {
+    margin: 0;
+}
+.section-title h4 {
+    color: #bfbdbd;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+.overlay {
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+section {
+    position: relative;
+    padding: 100px 0;
+}
+.about-image img, .team-thumb img {
+    width: 100%;
+}
+.skill-btn{
+    border-radius: 25px;
+    border: 1px solid rgb(255, 60, 0);
+    background-color: rgba(255, 60, 0, 0.164);
+    outline: none;
+}
+.download-btn{
+    background-color: rgb(255, 60, 0);
+    padding: 12px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.download-btn:hover{
+    color: rgb(255, 60, 0);
+    background-color: rgb(209, 209, 209);
+    box-shadow: inset 0 0 13px 1px #c0bfbf81;
+    transition-duration: 0.3s;
+}
+.foot-links{
+    padding-left: 0px;
+}
+.blog-footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2.5rem 0;
+    color: #ffffff70;
+    text-align: center;
+    background-color: #0f0f0f;
+    border-top: .05rem solid #e5e5e5;
+}
+.maroon{
+    color:rgb(255, 60, 0);
+    text-decoration: none;
+}
+.maroon:hover{
+    color: white;
+    transition-duration: 0.2s;
+}
+.b2top{
+    color: rgba(245, 245, 245, 0.685);
+    text-decoration: none;
+}
+.b2top:hover{
+    color: white;
+    transition-duration: 0.2s;
+}
+.col ul li{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+}
+address{
+    padding-left: 12px;
+}
+.col ul li a, .col ul address a{
+    color: rgba(0, 0, 0, 0.842);
+    font-weight: lighter;
+    text-decoration: none;
+}
+.col ul li a:hover, .col ul address a:hover{
+    border-bottom: 4px solid rgb(255, 60, 0);
+    transition-duration: 0.2s;
+}
+@media(max-width:768px){
+    .navbar{
+        display: block;
+    }
+    .heading{
+        display: none;
+    }
+}
+.bg-border{
+    border: 0.5px solid #212529;
+}
+.op{
+    background: rgb(251, 255, 193);
+}
+.dataTables_wrapper{
+    background-color: #cfe2ff!important;
+    padding: 0;
+}
+.size{
+    font-size: 12px;
+}
+.size1{
+    font-size: 14px;
+}
+.display-6, .fw-bolder{
+    font-family: 'Maven Pro', sans-serif;
+}
+.query{
+    text-transform: uppercase;
+}
+.main-search{
+    padding: 0;
+}
+.caption , .caption .btn{
+    font-family: 'Montserrat', sans-serif;
+}
+.search-title{
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px -4px 5px black;
+}
+h1{
+    font-size: 42px;
+}
+h4{
+    font-size: 14px;
+}
+.slider{
+    height: 87vh;
+    cursor: pointer;
+}
+.slider-1{
+    background-image: url('../images/carousel-1.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.btn-1{
+    color: rgb(255, 255, 255);
+    background-color: #47bbf5;
+}
+.btn-1:hover{
+    color: rgb(0, 0, 0);
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+}
+.slider-2{
+    background-image: url('../images/carousel-2.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+.btn-2{
+    color: rgb(255, 255, 255);
+    background-color: #d59d0b;
+    border: 2px solid #fffcdc;
+}
+.btn-2:hover{
+    color: #d59d0b;
+    transition-duration: 0.3s;
+    background-color: #fffcdc;
+    border: 2px solid #d59d0b;
+}
+.slider-3{
+    background-image: url('../images/carousel-3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.btn-3{
+    color: rgb(255, 255, 255);
+    background-color: #e53b00;
+}
+.btn-3:hover{
+    color: #e1d8dd;
+    transition-duration: 0.3s;
+    background-color: #3e0206;
+}
+.bg-form{
+    background-image: url('../images/form-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 0 13px 3px #243457;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.search-box{
+    background: #002b56ab;
+    padding: 50px 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 18px 0px #8a8787;
+}
+.form-txt{
+    font-family: 'Maven Pro', sans-serif;
+}
+.btn-search{
+    color: rgb(255, 255, 255);
+    background-color: #d59d0b;
+    border: 2px solid #fffcdc;
+}
+.btn-search:hover{
+    color: #d59d0b;
+    transition-duration: 0.3s;
+    background-color: #161616;
+    border: 2px solid #d59d0b;
+}
+.sent-op {
+    text-align: center;
+    vertical-align: middle;
+    font-size: x-large;
+}
+.error-box{
+    background-image: url('../images/error.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+.error-txt{
+    background-color: rgba(13, 10, 58, 0.637);
+    padding: 5px 10px;
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 25px;
+    font-weight: bolder;
+    color: cornsilk;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background: #000000;
+}

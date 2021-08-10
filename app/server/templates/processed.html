@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CosmiX-6 | Tweepy Sentiment">
+    <meta name="description"
+        content="Tweepy Sentiment is a machine learning project. This project is developed to generate the sentiment report on the basis of twitter's post. User can search any topic that he Linkers to explore.">
+    <meta property="og:image" content="static/images/about-image.jpg">
+    <meta property="profile:first_name" content="Akash">
+    <meta property="profile:last_name" content="Sharma">
+    <meta property="og:type" content="og:profile">
+    <meta property="og:site_name" content="CosmiX-6">
+    <meta name="author" content="Akash Sharama - CosmiX-6">
+
+    <!-- Title -->
+    <title>CosmiX-6 | Tweepy Sentiment</title>
+
+    <!-- Linkers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&family=Roboto+Slab&family=RocknRoll+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="static/css/master.css">
+    <script src="https://kit.fontawesome.com/6fffcb1429.js" crossorigin="anonymous"></script>
+
+    <!-- Favicons here -->
+    <link rel="icon" href="static/images/favicon-200x200.png" sizes="200x200" type="image/png">
+    <link rel="icon" href="static/images/favicon-527x527.png" sizes="527x527" type="image/png">
+</head>
+
+<body>
+    <div class="container-fluid main-container">
+        <!-- Header Starts here -->
+        <!-- Nav fo Tab size and lower screens -->
+        <nav class="container-fluid navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://cosmix-6.github.io/">
+                    <h2 class="header-title">CosmiX-6</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://cosmix-6.github.io/"><i
+                                    class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://cosmix-6.github.io/#projects"><i
+                                    class="fas fa-code-branch"></i> Porfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://cosmix-6.github.io/#resume"><i
+                                    class="fas fa-id-badge"></i> Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Nav for higher than Tab screen -->
+        <div class="container heading fixed-top">
+            <header class="blog-header py-3">
+                <legend class="h2 text-center header-title">CosmiX-6</legend>
+            </header>
+            <div class="menubar row d-flex justify-content-end align-items-center">
+                <ul>
+                    <div class="menus" id="myMenu">
+                        <li class="menu-items"><i class="fas fa-home"></i> <a class="item-link"
+                                href="https://cosmix-6.github.io/">Home</a></li>
+                        <li class="menu-items"><i class="fas fa-code-branch"></i> <a class="item-link activelink"
+                                href="https://cosmix-6.github.io/#projects">Porfolio</a>
+                        </li>
+                        <li class="menu-items"><i class="fas fa-id-badge"></i> <a class="item-link"
+                                href="https://cosmix-6.github.io/#resume">Resume</a></li>
+                        <li class="menu-items"><i class="fas fa-phone-alt"></i> <a class="item-link"
+                                href="#contact">Contact</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- Header Ends Here -->
+
+        <main class="container">
+
+            <div class="container-fluid mb-5">
+                <div class="row px-2 py-5 display-3 fw-bolder bg-dark text-light">
+                    <i class="fas fa-file-invoice"> Sentiment Score</i>
+                </div>
+                <hr id="app" class="featurette-divider m-0">
+                <div class="row bg-dark p-2 text-light">
+                    <div class="col-4">
+                        Search Title :
+                    </div>
+                    <div class="col-8 bg-light text-dark text-center query">
+                        {{query}}
+                    </div>
+                </div>
+                <div class="row bg-dark p-2 text-light">
+                    <div class="col-4">
+                        Absoulte Score :
+                    </div>
+                    <div class="col-8 bg-light text-dark text-center">
+                        {{result.pos - result.neg}}
+                    </div>
+                </div>
+                <div class="row bg-dark p-2 text-light">
+                    <div class="col-4">
+                        Normalized Score :
+                    </div>
+                    <div class="col-8 bg-light text-dark text-center">
+                        {{(result.pos - result.neg) / result.length}}
+                    </div>
+                </div>
+                <div class="row bg-dark p-2 text-light">
+                    <div class="col-4">
+                        Sentiment Ratio :
+                    </div>
+                    <div class="col-8 bg-light text-dark text-center">
+                        {{result.pos / (result.neg + 1)}}
+                    </div>
+                </div>
+                <div class="row display-6 p-2 py-3 bg-dark text-light">
+                    <i class="fas fa-chart-bar"> Sentiment Plot_</i>
+                </div>
+                <div class="row justify-content-around mb-5">
+                    <div class="col-md-6">
+                        <div class="row bg-dark text-light justify-content-center">
+                            Sentiment Count
+                        </div>
+                        <div class="bg-border row">
+                            <canvas id="myChart-1" height="350"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row bg-dark text-light justify-content-center">
+                            Sentiment Score
+                        </div>
+                        <div class="bg-border row">
+                            <canvas id="myChart-2" height="350"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-2 py-3 display-6 mt-5 bg-dark text-light">
+                    <i class="fas fa-table"> Stats_</i>
+                </div>
+                <div class="size1 row">
+                    <div class="bg-border col-4 p-1 bg-info px-4 text-dark">Tweets Found:</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.length}}</div>
+                    <div class="bg-border col-4 p-1 bg-info px-4 text-dark">Tweets of Past:</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.days}} day</div>
+                </div>
+                <div class="size1 row">
+                    <div class="bg-border col-4 p-1 bg-success px-4 text-light">Positive :</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.pos}}</div>
+                    <div class="bg-border col-4 p-1 bg-success px-4 text-light">Positive(%):</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.pos_per}}%</div>
+                </div>
+                <div class="size1 row">
+                    <div class="bg-border col-4 p-1 bg-danger px-4 text-light">Negative :</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.neg}}</div>
+                    <div class="bg-border col-4 p-1 bg-danger px-4 text-light">Negative(%):</div>
+                    <div class="bg-border op col-2 p-1 text-center">{{result.neg_per}}%</div>
+                </div>
+                <div class="size1 row">
+                    <div class="bg-border col-4 p-1 bg-info px-4 text-dark">Mention found:</div>
+                    <div class="bg-border op col-2 p-1 text-center">54.3</div>
+                    <div class="bg-border col-4 p-1 bg-info px-4 text-dark">Hastag found:</div>
+                    <div class="bg-border op col-2 p-1 text-center">45.7</div>
+                </div>
+                <div class="size row mb-5 p-1 bg-dark text-light px-2 justify-content-around">
+                    <div class="row fw-bold">
+                        Model details :
+                    </div>
+                    <div class="container-fluid row">
+                        <div class="col-sm-12 col-md-6 text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    Positive
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="bg-border py-3 col-12 bg-light text-dark">
+                                    Precision : 0.78 <br>
+                                    Recall &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 0.81 <br>
+                                    F1-score &nbsp;&nbsp;&nbsp;: 0.80
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-12 col-md-6 text-center">
+                            <div class="row">
+                                <div class="col-12">
+                                    Negative
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="bg-border py-3 col-12 bg-light text-dark">
+                                    Precision : 0.80 <br>
+                                    Recall &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 0.78 <br>
+                                    F1-score &nbsp;&nbsp;&nbsp;: 0.79
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row text-muted text-center">
+                        <i>This application was build on the model that uses Logisitic Regression method.</i><br />
+                        <i>Accuracy :79%</i><br>
+                        <i>Vectorizer : ngram_range=(1,2)</i>
+                    </div>
+                </div>
+
+                <div class="row bg-border p-2 py-3 display-6 mt-5 bg-dark text-light">
+                    <i class="fas fa-table"> Tweets Dataset_</i>
+                </div>
+                <div class="row" style="overflow-x:auto;">
+                    <table class="table table-responsive table-striped table-hover" id="myTable">
+                        <thead class="table-primary text-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Date</th>
+                                <th>Tweet Text</th>
+                                <th>Location</th>
+                                <th>Sentiment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in result.data %}
+                            <tr>
+                                <td>{{loop.index}}</td>
+                                <td>{{i.date}}</td>
+                                <td>{{i.text}}</td>
+                                <td>{{i.location}}</td>
+                                <td class="sent-op">{% if i.sentiment == 'Positive' %}&#128512;{% else %}&#128543;{%
+                                    endif %}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+
+            <hr class="featurette-divider">
+
+            <!-- CONTACT Section Starts -->
+            <section id="contact" data-stellar-background-ratio="0.5">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <b class="display-4"><span>&vert;</span>Contact</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="foot-links">
+                            <li><i class="fas fa-home"></i> <a href="https://cosmix-6.github.io/">Home</a></li>
+                            <li><i class="fas fa-code-branch"></i> <a
+                                    href="https://cosmix-6.github.io/#projects">Porfolio</a></li>
+                            <li><i class="fas fa-file-download"></i> <a
+                                    href="https://cosmix-6.github.io/#resume">Resume</a></li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-muted" href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="foot-links">
+                            <li><i class="fab fa-linkedin"></i> <a
+                                    href="https://www.linkedin.com/in/akash-sharma-01775b14a/">LinkedIn</a></li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/CosmiX-6/">Github</a></li>
+                            <li><i class="fab fa-discord"></i> <a
+                                    href="https://discord.com/users/366283102462541865">Discord</a></li>
+                            <li><i class="fab fa-instagram"></i> <a
+                                    href="https://www.instagram.com/craz.e_boy/">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="foot-links">
+                            <address>
+                                <i class="fas fa-envelope"></i> <a
+                                    href="mailto:akashsharmaxxiv@gmail.com">akashsharmaxxiv@gmail.com</a><br>
+                                <i class="fas fa-phone"></i> <a href="tel:8422081717">+91 8422081717</a><br>
+                                <i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra<br />
+                                &nbsp;&nbsp;&nbsp; India
+                            </address>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- CONTACT Section Ends -->
+
+        </main>
+
+        <!-- FOOTER Starts here -->
+        <footer class="container blog-footer">
+            <p>Application made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> by <a class="maroon"
+                    href="https://www.linkedin.com/in/akash-sharma-01775b14a/">@akashsharma</a><br>Copyrights &copy;
+                <script>document.write(new Date().getFullYear())</script>
+                CosmiX-6.
+            <p>
+                <a class="b2top" href="#">&UpArrow; Back to top &UpArrow;</a>
+            </p>
+        </footer>
+        <!-- FOOTER Ends here -->
+
+    </div>
+
+    <!-- javascripts goes here -->
+    <script src="static/js/chart.min.js"></script>
+    <script src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/jquery-3.6.0.min.js"></script>
+    <script src="static/js/jquery.dataTables.min.js"></script>
+    <script src="static/js/popper.min.js"></script>
+    <script src="static/js/bootstrap.min-4.2.1.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script>
+        var menuLink = document.getElementById("myMenu");
+        var links = menuLink.getElementsByClassName("item-link");
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("activelink");
+                current[0].className = current[0].className.replace(" activelink", "");
+                this.className += " activelink";
+            });
+        }
+    </script>
+    <script>
+        var ctx = document.getElementById('myChart-1').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Positive', 'Negative'],
+                datasets: [{
+                    label: 'Sentiment Count',
+                    data: [{{ result.pos }}, {{ result.neg }}],
+            backgroundColor: [
+                '#8dff8d',
+                '#ff6868',
+            ],
+            borderColor: [
+                '#00ff00',
+                '#ff2121',
+            ],
+            borderWidth: 2
+        }]
+            },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                        display: true,
+                            title: {
+                        display: true,
+                            text: 'Frequency',
+                        }
+                },
+                x: {
+                    display: true,
+                        title: {
+                        display: true,
+                            text: 'Sentiment',
+                        }
+                }
+            }
+        }
+        });
+
+        var ctx = document.getElementById('myChart-2').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Positive', 'Negative'],
+                datasets: [{
+                    label: 'Sentiment Score',
+                    data: [{{ result.pos_per }}, {{ result.neg_per }}],
+            backgroundColor: [
+                '#8dff8d',
+                '#ff6868',
+            ],
+            borderColor: [
+                '#00ff00',
+                '#ff2121',
+            ],
+            borderWidth: 2,
+        }]
+            },
+        options: {
+            scales: {
+                y: {
+                    max: 100,
+                        beginAtZero: true,
+                            display: true,
+                                title: {
+                        display: true,
+                            text: 'Score (%)',
+                        }
+                },
+                x: {
+                    display: true,
+                        title: {
+                        display: true,
+                            text: 'Sentiment',
+                        }
+                }
+            }
+        }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+    <!-- End of javascripts -->
+
+</body>
+
+</html>

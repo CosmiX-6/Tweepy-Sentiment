@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CosmiX-6 | Tweepy Sentiment">
+    <meta name="description"
+        content="Tweepy Sentiment is a machine learning project. This project is developed to generate the sentiment report on the basis of twitter's post. User can search any topic that he Linkers to explore.">
+    <meta property="og:image" content="static/images/about-image.jpg">
+    <meta property="profile:first_name" content="Akash">
+    <meta property="profile:last_name" content="Sharma">
+    <meta property="og:type" content="og:profile">
+    <meta property="og:site_name" content="CosmiX-6">
+    <meta name="author" content="Akash Sharama - CosmiX-6">
+
+    <!-- Title -->
+    <title>CosmiX-6 | Tweepy Sentiment</title>
+
+    <!-- Linkers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Maven+Pro&family=Roboto+Slab&family=RocknRoll+One&family=Montserrat&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/master.css">
+    <script src="https://kit.fontawesome.com/6fffcb1429.js" crossorigin="anonymous"></script>
+
+    <!-- Favicons here -->
+    <link rel="icon" href="static/images/favicon-200x200.png" sizes="200x200" type="image/png">
+    <link rel="icon" href="static/images/favicon-527x527.png" sizes="527x527" type="image/png">
+</head>
+
+<body>
+    <div class="container-fluid main-container">
+        <!-- Header Starts here -->
+        <!-- Nav fo Tab size and lower screens -->
+        <nav class="container-fluid navbar navbar-expand-lg fixed-top navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="https://cosmix-6.github.io/">
+                    <h2 class="header-title">CosmiX-6</h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="https://cosmix-6.github.io/"><i
+                                    class="fas fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://cosmix-6.github.io/#projects"><i
+                                    class="fas fa-code-branch"></i> Porfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://cosmix-6.github.io/#resume"><i
+                                    class="fas fa-id-badge"></i> Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"><i class="fas fa-phone-alt"></i> Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Nav for higher than Tab screen -->
+        <div class="container heading fixed-top">
+            <header class="blog-header py-3">
+                <legend class="h2 text-center header-title">CosmiX-6</legend>
+            </header>
+            <div class="menubar row d-flex justify-content-end align-items-center">
+                <ul>
+                    <div class="menus" id="myMenu">
+                        <li class="menu-items"><i class="fas fa-home"></i> <a class="item-link"
+                                href="https://cosmix-6.github.io/">Home</a></li>
+                        <li class="menu-items"><i class="fas fa-code-branch"></i> <a class="item-link activelink"
+                                href="https://cosmix-6.github.io/#projects">Porfolio</a>
+                        </li>
+                        <li class="menu-items"><i class="fas fa-id-badge"></i> <a class="item-link"
+                                href="https://cosmix-6.github.io/#resume">Resume</a></li>
+                        <li class="menu-items"><i class="fas fa-phone-alt"></i> <a class="item-link"
+                                href="#contact">Contact</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <!-- Header Ends Here -->
+
+        <main class="conatiner-fluid container-md mt-1">
+            <!-- Carousel Section Starts -->
+            <section class="pb-2 pt-0" data-stellar-background-ratio="0.5">
+                <div class="owl-carousel owl-theme">
+                    <div class="container-fluid px-5 slider slider-1 modal-dialog-centered">
+                        <div class="row justify-content-between">
+                            <div class="caption col-md-8 col-sm-12">
+                                <h5 class="fw-bold text-dark">WELCOME</h5>
+                                <h1 class="fw-bolder text-dark">What topic would you like to analyze about today?
+                                </h1>
+                                <a href="#explore" class="btn btn-1 fw-bold"><i class="fab fa-twitter"></i> Explore</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid px-5 slider slider-2 modal-dialog-centered">
+                        <div class="row justify-content-between">
+                            <div class="caption col-md-8 col-sm-12">
+                                <h5 class="fw-bold text-white">COSMIX-6</h5>
+                                <h1 class="fw-bolder text-white">My mission is to provide an unforgettable experience.
+                                </h1>
+                                <a href="" class="btn btn-2 fw-bold"><i class="fas fa-user"></i> About</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid px-5 slider slider-3 modal-dialog-centered">
+                        <div class="row justify-content-between">
+                            <div class="caption col-md-8 col-sm-12">
+                                <h5 class="fw-bold text-white">SOURCE CODE</h5>
+                                <h1 class="fw-bolder text-white">The production from Cosmix Lab is now on Github.</h1>
+                                <a href="" class="btn btn-3 fw-bold"><i class="fab fa-github"></i> Get Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Carousel Section Ends -->
+
+            <hr class="featurette-divider" id="explore">
+
+            <!-- Form Section Starts -->
+            <section class="pb-2 pt-2" data-stellar-background-ratio="0.5">
+                <div class="container bg-form">
+                    <div class="row modal-dialog-centered text-center m-5">
+
+                        <div class="col-lg-6 col-md-12 text-start">
+                            <div class="about-info">
+                                <div class="section-title wow fadeInUp" data-wow-delay="0.2s">
+                                    <h1 class="display-1 search-title fw-bolder mt-5 text-light form-txt">
+                                        Tweepy Sentiment
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 search-box">
+                            <div class="wow fadeInUp about-image" data-wow-delay="0.6s">
+                                <form name="search-form" method="POST" onsubmit="return validateForm()">
+                                    <h4
+                                        class="display-6 search-title fw-bolder modal-dialog-centered text-light form-txt">
+                                        Start Exploring...
+                                    </h4>
+                                    <input class="form-control form-control-lg mt-4 mb-4" type="text" name="search_txt"
+                                        placeholder="What are you looki'N for ?" required>
+                                    <button type="submit" class="btn btn-2 btn-lg px-4 py-1">Search</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+            </section>
+            <!-- Form Section Ends -->
+
+            <hr class="featurette-divider">
+
+            <!-- CONTACT Section Starts -->
+            <section id="contact" data-stellar-background-ratio="0.5">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <b class="display-4"><span>&vert;</span>Contact</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="foot-links">
+                            <li><i class="fas fa-home"></i> <a href="https://cosmix-6.github.io/">Home</a></li>
+                            <li><i class="fas fa-code-branch"></i> <a
+                                    href="https://cosmix-6.github.io/#projects">Porfolio</a></li>
+                            <li><i class="fas fa-file-download"></i> <a
+                                    href="https://cosmix-6.github.io/#resume">Resume</a></li>
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;<a class="text-muted" href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="foot-links">
+                            <li><i class="fab fa-linkedin"></i> <a
+                                    href="https://www.linkedin.com/in/akash-sharma-01775b14a/">LinkedIn</a></li>
+                            <li><i class="fab fa-github"></i> <a href="https://github.com/CosmiX-6/">Github</a></li>
+                            <li><i class="fab fa-discord"></i> <a
+                                    href="https://discord.com/users/366283102462541865">Discord</a></li>
+                            <li><i class="fab fa-instagram"></i> <a
+                                    href="https://www.instagram.com/craz.e_boy/">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="foot-links">
+                            <address>
+                                <i class="fas fa-envelope"></i> <a
+                                    href="mailto:akashsharmaxxiv@gmail.com">akashsharmaxxiv@gmail.com</a><br>
+                                <i class="fas fa-phone"></i> <a href="tel:8422081717">+91 8422081717</a><br>
+                                <i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra<br />
+                                &nbsp;&nbsp;&nbsp; India
+                            </address>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- CONTACT Section Ends -->
+
+        </main>
+
+        <!-- FOOTER Starts here -->
+        <footer class="container blog-footer">
+            <p>Application made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> by <a class="maroon"
+                    href="https://www.linkedin.com/in/akash-sharma-01775b14a/">@akashsharma</a><br>Copyrights &copy;
+                <script>document.write(new Date().getFullYear())</script>
+                CosmiX-6.
+            <p>
+                <a class="b2top" href="#">&UpArrow; Back to top &UpArrow;</a>
+            </p>
+        </footer>
+        <!-- FOOTER Ends here -->
+
+    </div>
+
+    <!-- javascripts goes here -->
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            animateOut: 'fadeOut',
+            animateIn: 'fadeIn',
+            smartSpeed: 500,
+            autoplay: true,
+            autoplayTimeout: 4500,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1
+                }
+            }
+        });
+    </script>
+    <script>
+        var menuLink = document.getElementById("myMenu");
+        var links = menuLink.getElementsByClassName("item-link");
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("activelink");
+                current[0].className = current[0].className.replace(" activelink", "");
+                this.className += " activelink";
+            });
+        }
+    </script>
+    <script>
+        function validateForm() {
+            let x = document.forms["search-form"]["search_txt"].value;
+            if (x == "") {
+                alert("Query cannot be empty!");
+                return false;
+            }
+        }
+    </script>
+    <!-- End of javascripts -->
+
+</body>
+
+</html>
